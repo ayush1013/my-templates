@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .open {
+        color: white;
+        background-color: blueviolet;
+        width: 100px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        margin-top: 50px;
+      }
+
+      .close {
+        color: white;
+        background-color: red;
+        width: 120px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+        margin-top: 50px;
+        cursor: pointer;
+      }
+      .modal {
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        width: 350px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background-color: antiquewhite;
+        visibility: hidden;
+      }
+      .open-modal{
+        visibility: visible;
+      }
+      .container{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" >
+      <button class="open" onclick="openModal()" >OPEN</button>
+      <div class="modal" id="modals" >
+        <h1>Hi I am in the modal</h1>
+        <button class="close" onclick="closeModal()" >Close Me</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+    let modal = document.querySelector("#modals");
+
+    function openModal(){
+        modal.classList.add("open-modal");
+    }
+    function closeModal(){
+        modal.classList.remove("open-modal");
+    }
+</script>
